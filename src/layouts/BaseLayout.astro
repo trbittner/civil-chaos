@@ -1,0 +1,38 @@
+---
+const { pageTitle } = Astro.props
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" 
+		    rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" 
+		    rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" 
+		    rel="stylesheet">		    
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{pageTitle}</title>
+	</head>
+	<body class='font-lora'>
+	    <h1 class="text-6xl ml-16 mt-16 font-bold font-pacifico">Chicago Bot Dog</h1>
+	    <div class="mx-4 mt-2">
+	        <div class="h-2 bg-red-500 w-full rounded-full"></div>
+	    </div>
+	    <div class="mx-4 mt-2">
+	        <div class="h-2 bg-yellow-500 w-full rounded-full"></div>
+	    </div>
+	    <div class="mt-8 flex">
+	        <div class="left-rail basis-1/4">
+	        </div>
+	        <div class="main basis-1/2">
+	            <h2 class="text-xl font-bold font-poppins">{pageTitle}</h1>
+                <slot />
+            </div>
+            <div class="right-rail basis-1/4">
+            </div>
+        </div>
+	</body>
+</html>
