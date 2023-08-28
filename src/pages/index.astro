@@ -1,8 +1,14 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
-const pageTitle = "Chicago Bot Dog"
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../layouts/BaseLayout.astro';;
+
+const blogEntries = await getCollection('blog');
+const blogEntry = blogEntries[0];
+const { Content } = await blogEntry.render();
+
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-	<p>Welcome to my blog!</p>
+<BaseLayout pageTitle={blogEntry.data.title} pubDate={blogEntry.data.pubDate}>
+    <Content />
 </BaseLayout>

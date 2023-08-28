@@ -10,5 +10,8 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [
+		// For markdown styling https://zaengle.com/blog/tailwind-typography-plugin
+		require('@tailwindcss/typography'),	
+	],
 }
