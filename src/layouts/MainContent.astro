@@ -1,0 +1,12 @@
+---
+import moment from 'moment';
+const { pageTitle, pubDate } = Astro.props;
+---
+
+<h2 class="text-xl font-bold font-poppins">{pageTitle}</h1>
+<div class="text-gray-400">
+	{moment(pubDate).fromNow()}
+</div>
+<div class="prose mt-4">
+	<slot />
+</div>

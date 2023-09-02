@@ -2,6 +2,10 @@
 import { getCollection } from 'astro:content';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import MainContent from '../../layouts/MainContent.astro';
+
+import LeftRail from '../../components/LeftRail.astro';
+import RightRail from '../../components/RightRail.astro';
 
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
@@ -15,6 +19,14 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<BaseLayout pageTitle={entry.data.title} pubDate={entry.data.pubDate}>
-    <Content />
+<BaseLayout>
+    <div class="hidden md:basis-1/4 md:block ml-12 md:mt-4"> 
+        <LeftRail />
+    </div>
+    <div class="basis-full md:basis-1/2 ml-12">
+        <MainContent pageTitle={entry.data.title} pubDate={entry.data.pubDate}>
+            <Content />
+        </MainContent>
+    </div>
+    <RightRail />
 </BaseLayout>

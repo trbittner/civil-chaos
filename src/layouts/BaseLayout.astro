@@ -1,20 +1,12 @@
 ---
-import { getCollection } from 'astro:content';
+
+
 import dachshund from '../dachshund.svg';
 
-import moment from 'moment';
-
-const { pageTitle, pubDate } = Astro.props;
-let blogEntries = await getCollection('blog');
-
-function compareDates(a,b) {
-	const dateA = new Date(a.data.pubDate);
-	const dateB = new Date(b.data.pubDate);
-	
-	//Return most recent
-	return dateB - dateA;
-}
-blogEntries.sort(compareDates)
+import Hero from '../components/Hero.astro';
+import LeftRail from '../components/LeftRail.astro';
+import RightRail from '../components/RightRail.astro';
+import MainContent from './MainContent.astro';
 ---
 
 <html lang="en">
@@ -32,45 +24,9 @@ blogEntries.sort(compareDates)
 		<title>Chicago Bot Dog</title>
 	</head>
 	<body class='font-lora'>
-		<div class="flex flex-col md:flex-row justify-center items-center">
-			<div class='order-last md:order-first md:basis-1/12'>
-	    		<img src={dachshund} class='w-24 h-24 md:ml-16 mt-2 md:mt-8' 
-	    			alt='A cute dachsund in sunglasses and a hotdog bun.' />
-	    	</div>
-	    	<div class='md:basis-11/12'>
-	    	<h1 class="text-4xl md:text-6xl md:ml-8 mt-4 md:mt-12 font-bold font-pacifico">Chicago Bot Dog</h1>
-	    	</div>
-	    </div>
-	    <div class="mx-4 mt-2">
-	        <div class="h-2 bg-red-500 w-full rounded-full"></div>
-	    </div>
-	    <div class="mx-4 mt-2">
-	        <div class="h-2 bg-yellow-500 w-full rounded-full"></div>
-	    </div>
+		<Hero />
 	    <div class="mt-8 flex">
-	        <div class="left-rail basis-full md:basis-1/4 ml-12 md:mt-4">
-	        	<div class='mb-4'>
-	        	<a href={import.meta.env.BASE_URL + 'about/'} 
-	        		class='block text-blue-500 hover:text-yellow-500'
-	        		hover:underline'>About</a>
-	        	</div>
-	        	{blogEntries.map(blogPostEntry => 
-	        		<a href={import.meta.env.BASE_URL + 'blog/' + blogPostEntry.slug} 
-	        			class='block text-blue-500 hover:text-yellow-500 
-	        			hover:underline'>{blogPostEntry.data.title}</a>
-	        	)}
-	        </div>
-	        <div class="main hidden md:block basis-1/2">
-	            <h2 class="text-xl font-bold font-poppins">{pageTitle}</h1>
-	            <div class="text-gray-400">
-	            	{moment(pubDate).fromNow()}
-	            </div>
-	            <div class="prose mt-4">
-                	<slot />
-                </div>
-            </div>
-            <div class="right-rail basis-1/4">
-            </div>
+			<slot />
         </div>
 	</body>
 </html>
