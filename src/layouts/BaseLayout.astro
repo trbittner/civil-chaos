@@ -32,10 +32,14 @@ blogEntries.sort(compareDates)
 		<title>Chicago Bot Dog</title>
 	</head>
 	<body class='font-lora'>
-		<div class="flex">
-	    <img src={dachshund} class='w-24 h-24 ml-16 mt-8' alt='A cute dachsund in sunglasses and a hotdog bun.' />		
-	    <h1 class="text-6xl ml-2 mt-12 font-bold font-pacifico">Chicago Bot Dog</h1>
-
+		<div class="flex flex-col md:flex-row justify-center items-center">
+			<div class='order-last md:order-first md:basis-1/12'>
+	    		<img src={dachshund} class='w-24 h-24 md:ml-16 mt-2 md:mt-8' 
+	    			alt='A cute dachsund in sunglasses and a hotdog bun.' />
+	    	</div>
+	    	<div class='md:basis-11/12'>
+	    	<h1 class="text-4xl md:text-6xl md:ml-8 mt-4 md:mt-12 font-bold font-pacifico">Chicago Bot Dog</h1>
+	    	</div>
 	    </div>
 	    <div class="mx-4 mt-2">
 	        <div class="h-2 bg-red-500 w-full rounded-full"></div>
@@ -44,7 +48,7 @@ blogEntries.sort(compareDates)
 	        <div class="h-2 bg-yellow-500 w-full rounded-full"></div>
 	    </div>
 	    <div class="mt-8 flex">
-	        <div class="left-rail basis-1/4 ml-12 mt-4">
+	        <div class="left-rail basis-full md:basis-1/4 ml-12 md:mt-4">
 	        	<div class='mb-4'>
 	        	<a href={import.meta.env.BASE_URL + 'about/'} 
 	        		class='block text-blue-500 hover:text-yellow-500'
@@ -56,7 +60,7 @@ blogEntries.sort(compareDates)
 	        			hover:underline'>{blogPostEntry.data.title}</a>
 	        	)}
 	        </div>
-	        <div class="main basis-1/2">
+	        <div class="main hidden md:block basis-1/2">
 	            <h2 class="text-xl font-bold font-poppins">{pageTitle}</h1>
 	            <div class="text-gray-400">
 	            	{moment(pubDate).fromNow()}
