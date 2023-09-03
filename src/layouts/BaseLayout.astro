@@ -1,7 +1,10 @@
 ---
 import dachshund from '../dachshund.svg';
-
 import Hero from '../components/Hero.astro';
+import LeftRail from '../components/LeftRail.astro';
+import RightRail from '../components/RightRail.astro';
+
+const { leftResponsive, mainResponsive, pageTitle } = Astro.props;
 ---
 
 <html lang="en">
@@ -23,7 +26,13 @@ import Hero from '../components/Hero.astro';
 	<body class='font-lora'>
 		<Hero />
 	    <div class="mt-4 md:mt-8 flex">
-			<slot />
+			<div class={leftResponsive}>
+				<LeftRail />
+			</div>
+			<div class={mainResponsive}>
+				<slot />
+			</div>
+			<RightRail />
         </div>
 	</body>
 </html>

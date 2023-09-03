@@ -1,5 +1,17 @@
-<a href="/">Home</a>
-<a href="/about/">About</a>
-<body>
-    <h1>This is my about page</h1>
-</body>
+---
+import HomeLink from '../components/HomeLink.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MainContent from '../layouts/MainContent.astro';
+---
+
+<BaseLayout leftResponsive='hidden md:basis-1/4 md:block ml-12 md:mt-4'
+    mainResponsive='basis-full md:basis-1/2 ml-12 md:ml-0'>
+    
+    <HomeLink />
+    <h2 class="text-xl font-bold font-poppins">About</h1>
+
+    <div class="prose mt-4">
+	    <p>This is text about me.</p>
+    </div>
+    
+</BaseLayout>

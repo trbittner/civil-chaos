@@ -4,8 +4,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import MainContent from '../../layouts/MainContent.astro';
 
-import LeftRail from '../../components/LeftRail.astro';
-import RightRail from '../../components/RightRail.astro';
+import HomeLink from '../../components/HomeLink.astro';
 
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
@@ -19,19 +18,12 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<BaseLayout>
-    <div class="hidden md:basis-1/4 md:block ml-12 md:mt-4"> 
-        <LeftRail />
-    </div>
-    <div class="basis-full md:basis-1/2 ml-12 md:ml-0">
-        <div class="text-center md:hidden mb-4 mt-0">
-          <a class="text-gray-700" href={import.meta.env.BASE_URL}>
-            <i class="bi bi-house-door-fill text-xl lg:text-2xl" alt="Homepage"></i>
-          </a>
-        </div>
-        <MainContent pageTitle={entry.data.title} pubDate={entry.data.pubDate}>
-            <Content />
-        </MainContent>
-    </div>
-    <RightRail />
+<BaseLayout leftResponsive='hidden md:basis-1/4 md:block ml-12 md:mt-4'
+    mainResponsive='basis-full md:basis-1/2 ml-12 md:ml-0'>
+    
+    <HomeLink />
+    <MainContent pageTitle={entry.data.title} pubDate={entry.data.pubDate}>
+        <Content />
+    </MainContent>
+    
 </BaseLayout>
