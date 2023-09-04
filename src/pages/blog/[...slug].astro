@@ -22,7 +22,8 @@ const { Content } = await entry.render();
     mainResponsive='basis-full md:basis-1/2 ml-12 md:ml-0'>
     
     <HomeLink />
-    <MainContent pageTitle={entry.data.title} pubDate={entry.data.pubDate}>
+    <MainContent entry={entry} pageTitle={entry.data.title} 
+        pubDate={entry.data.pubDate}>
         <Content />
     </MainContent>
     

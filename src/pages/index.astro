@@ -12,7 +12,8 @@ const { Content } = await blogEntry.render();
 <BaseLayout leftResponsive='basis-full md:basis-1/4 ml-12 md:mt-4'
     mainResponsive='hidden md:block basis-1/2'>
     
-    <MainContent pageTitle={blogEntry.data.title} pubDate={blogEntry.data.pubDate}>
+    <MainContent entry={blogEntry} pageTitle={blogEntry.data.title} 
+        pubDate={blogEntry.data.pubDate}>
         <Content />
     </MainContent>
     
