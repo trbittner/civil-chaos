@@ -1,4 +1,5 @@
 ---
+import avatar from '../blog-avatar.jpg'
 import HomeLink from '../components/HomeLink.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import MainContent from '../layouts/MainContent.astro';
@@ -8,10 +9,74 @@ import MainContent from '../layouts/MainContent.astro';
     mainResponsive='basis-full md:basis-1/2 ml-12 md:ml-0'>
     
     <HomeLink />
-    <h2 class="text-xl font-bold font-poppins">About</h1>
+    <h2 class="text-xl font-bold font-poppins">About Me</h1>
 
     <div class="prose mt-4">
-	    <p>This is text about me.</p>
+	    <p>
+	        I'm a former software engineer who's been a manager of software 
+            engineers for more than a decade.  My experience has predominantly
+            been in the travel industry, but I've tried my level best to keep
+            up with trends across technology and the greater business world at 
+            large.
+	    </p>
+	    <p>
+	        The purpose of this blog is to document my journey back into a more
+	        hands-on role as I contemplate a career change (or, more appropriately, 
+	        a career reset).  I've always been a huge fan of just about every 
+	        facet of software engineering and computer science. For this 
+	        blog, I'm primarily interested in removing the complexity from systems 
+	        so people can put their ideas into practice faster.  
+	    </p>
+	    <p>
+	        I've often thought businesses in particular - and software engineers
+	        in particular - have a tendency to overcomplicate issues, usually in 
+	        the search to cover all possible edge cases that a customer may 
+	        encounter.  Given the modern state of technology, there are a lot of
+	        options to offload complexity elsewhere without removing the joy of 
+	        software development.
+	    </p>
+	    <p>
+	        For purists, some of the ideas I plan on exploring are blasphemy (like
+	        no-code, low-code, and Wordpress style options), but I think they're 
+	        worth the effort.  While I like the joy of coding for its sake (hence 
+	        my desire to create my own blog from scratch rather than use an 
+	        existing template), the desire to find quick, elegant solutions to 
+	        problems is even more of a draw.
+	    </p>
+	    <p>
+	        If you're interested in my general technical chops, they follow:
+	    </p>
+	    <ul>
+	        <li>Java has consumed most of my professional career.</li>
+	        <li>Erlang is a not too distant second.</li>
+	        <li>I have the requisite knowledge of frontend technologies that 
+	            accompanies the stereotypical "backend engineer" experience.
+	            I have come to regard HTML, ES6, and CSS affectionately.</li>
+	       <li>I've used Python for a glue language and for prototyping and love it.</li>
+	       <li>My initial professional experience used PHP, C, C++, and C#
+	           extensively.</li>
+	       <li>I've dabbled in several other languages.  I like them in varying 
+	           degrees, but as long as they're practical, I'd be willing to use 
+	           them.  Cobol's about the only language I detest because of its 
+	           combined verbosity and ability to write inscrutable code by 
+	           line 10 in the data section.</li>
+	       <li>I have experience in a lot of the other supporting tools and 
+	           languages that define the typical software engineering experience
+	           that are too numerous to mention (SQL,XML,JSON, etc.)</li>
+           <li>Along with simplicity, I'm interested in scalability.  Much of my
+               career as both an engineer and a manager has been managing 
+               scalability of large systems.</li>
+	    </ul>
+	    <p>
+	        Outside of the software world, I like to cook, play guitar, and learn
+	        languages.  I know Spanish, French, and Mandarin (in that order of expertise 
+	        and all fairly poorly).
+	    </p>
     </div>
-    
+	<div class="text-gray-400 mt-4 text-right">
+	462 words
+	</div>	
+    <div class='w-32 h-32 rounded-full overflow-hidden mx-auto mt-12'>
+        <img src={avatar} alt='Author Profile' class='w-full h-full object-cover' />
+    </div>
 </BaseLayout>
