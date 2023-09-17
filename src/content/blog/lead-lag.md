@@ -56,3 +56,23 @@ _exceedingly hard_ for the following reasons:
 So, while it's true that consuming 3500 fewer calories than you expend will lead to weight loss, determining
 when you've expended 3500 calories is not easy.
 
+These examples are specific to this leading indicator.  It takes tremendous discipline to ensure simple 
+processes are followed.  That, in fact, is what a lot of management at larger companies can devolve into - 
+chasing down timesheets and updating status for the nth time in a week.  If your response is "We can 
+automate that," then, yes, I agree.  However, remember we don't know what we're trying to automate in 
+the first place.  And, once we do, we don't know how much effort automating _it_ takes.  
+
+As for the variability around the measurements themselves, that isn't easy in the software engineering space
+either.  Finding the right statistic is difficult to track in any circumstance and measuring it correctly only
+adds more complexity.
+
+This isn't to say that you shouldn't look for leading indicators when they're apparent.  But, make sure first
+and foremost that you've got a reliable lagging indicator to start with.  Otherwise, you have nothing.  Then,
+as with almost everything in the software engineering space, take notes and iterate.  Celebrate your small 
+improvements and mildly indulge your cargo cult until you find a more logical path.  If it helps to say three
+Hail Marys before pushing your code to production and there's currently no other method to prevent the build 
+breaking 20% of the time, then do so.  But be open to exploration and hope that one day in the not-too-distant
+future, you can show that two Hail Marys will do the trick.
+
+That is the effective way to search for leading indicators.
+
